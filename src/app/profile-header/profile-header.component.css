@@ -1,0 +1,33 @@
+
+nav{
+    background: linear-gradient(to top, #6e6ef6 45%, #c9c9ff 90%) no-repeat;
+}
+
+i{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  i .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: rgb(89, 85, 85);
+    color: #fff;
+    background: transparent;
+    font-size: 25px;
+  
+    /* Position the tooltip */
+    position:absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%
+  }
+  
+  i:hover .tooltiptext {
+    visibility: visible;
+  }
+  
+  
+    
+  

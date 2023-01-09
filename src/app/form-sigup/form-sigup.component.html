@@ -1,40 +1,85 @@
 <app-home></app-home>
-<div class="container">
-    <div class="row">
-        <div class="col-md-5 mx-auto">
-          <div class="d-flex justify-contant-center">
-            <div class="card">
-                <div class="text-center">
-                    <h1>Registration</h1>
-                    <h5>❤️Get Free to Membership❤️</h5><hr>
+<div class="color">
+ <div class="section">
+  <div class="container">
+      <div class="row full-height justify-content-center">
+          <div class="col-12 text-center align-self-center py-5">
+              <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                 
+                <h6 class="mb-0 pb-3"><span>Registration </span><span>LogIn</span></h6>
+                    <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                   
+                    <label for="reg-log"></label>
+                   <div class="card-3d-wrap mx-auto">
+                      <div class="card-3d-wrapper">
+                          
+
+                        <form [formGroup]="signupform" (ngSubmit)="signup()">
+                          <div class="card-front">
+                              <div class="center-wrap">
+                                  <div class="section text-center">
+                                      <h4 class="mb-4 pb-3">Registration</h4>
+                                      <div class="form-group">
+                                          <input type="text" formControlName="name" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+                                          <span class="text-danger" *ngIf="signupform.controls['name'].dirty && signupform.hasError('required','name')">Email is required</span>
+                                      </div>	
+                                      <div class="form-group mt-2">
+                                        <input type="text" formControlName="phnno" name="logphone" class="form-style" placeholder="Your Mobile Number" id="logname" autocomplete="off">
+                                        <span class="text-danger" *ngIf="signupform.controls['phnno'].dirty && signupform.hasError('required','phnno')">Email is required</span>
+                                    </div>
+                                      <div class="form-group mt-2">
+                                          <input type="email" formControlName="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                          <span class="text-danger" *ngIf="signupform.controls['email'].dirty && signupform.hasError('required','email')">Email is required</span>
+                                      </div>	
+                                      <div class="form-group mt-2">
+                                          <input [type]="changetype?'Password':'text'" formControlName="pass" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                          <span class="eye" (click)="viewPassword()">
+                                            <i [ngClass]="visible? 'pi pi-eye-slash':'pi pi-eye'"
+                                                style="font-size:1rem"></i>
+
+                                        </span>
+                                          <span class="text-danger" *ngIf="signupform.controls['pass'].dirty && signupform.hasError('required','pass')">Email is required</span>
+                                      </div>
+                                      <button type="submit" [disabled]="!signupform.valid" class="btn mt-4">submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                          </form>
+
+
+
+
+
+
+
+                          
+                            <div class="card-back">
+                              <div class="center-wrap">
+                                  <div class="section text-center">
+                                      <h4 class="mb-4 pb-3">Info</h4>
+                                    </div>
+                                    <div class="colortext">
+                                      
+                                        <h5>Registration is done here. If your registration is already done. Then you can go to our login page..</h5>
+                                    <br>
+                                        <a routerLink="/form-login">Already Member ? Click to Log-In ! </a>
+                                    </div>
+                                    
+                                  </div>
+                            </div>
+                       
+
+                     
+                        
+
+
+
+
+                        </div>
+                    </div>
                 </div>
-
-                <form [formGroup]="signupform" (ngSubmit)="signup()">
-                    <div class="mb-3">
-                      <label  class="form-label">Name</label>
-                      <input type="text" formControlName="name" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label  class="form-label">Mobile Number</label>
-                        <input type="text" formControlName="phnno"  class="form-control" id="exampleInputMobile" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label  class="form-label">Email address</label>
-                        <input type="email" formControlName="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      </div>
-                    <div class="mb-3">
-                      <label  class="form-label">Password</label>
-                      <input type="password" formControlName="pass"  class="form-control" id="exampleInputPassword1" >
-                    </div>
-                       <button type="submit" class="btn btn-primary">Done</button>
-                  </form>
-                  <a routerLink="/form-login">Already Member ? Click to Login !</a>
-
-
             </div>
         </div>
-      </div>
-    </div>
+  </div>
 </div>
-
-
+</div>

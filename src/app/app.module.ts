@@ -11,6 +11,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { ResultComponent } from './result/result.component';
 import { SlideComponent } from './slide/slide.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProfileHeaderComponent } from './profile-header/profile-header.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -19,7 +25,9 @@ import { SlideComponent } from './slide/slide.component';
     FormSigupComponent,
     HomeComponent,
     ResultComponent,
-    SlideComponent
+    SlideComponent,
+    CheckboxComponent,
+    ProfileHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +35,8 @@ import { SlideComponent } from './slide/slide.component';
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,31 +1,74 @@
 <app-home></app-home>
-<div class="container">
-    <div class="row">
-        <div class="col-md-5 mx-auto">
-            <div class="d-flex justify-contant-center">
-            <div class="card">
-                <div class="text-center">
-                    <h1>Login Form</h1>
-                    <h5>❤️Feel Free to Login❤️</h5><hr>
+<div class="color">
+    <div class="section">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                        <h6 class="mb-0 pb-3"><span>LogIn </span><span>Registration</span></h6>
+                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                        <label for="reg-log"></label>
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-3d-wrapper">
+
+                                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                                    <div class="card-front">
+                                        <div class="center-wrap">
+                                            <div class="section text-center">
+                                                <h4 class="mb-4 pb-3">LogIn</h4>
+                                                <div class="form-group">
+                                                    <input type="email" formControlName="email" name="logemail"
+                                                        class="form-style" placeholder="Your Email" id="logemail"
+                                                        autocomplete="off">
+                                                    <span class="text-danger"
+                                                        *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">Email
+                                                        is required</span>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input [type]="changetype?'Password':'text'" formControlName="pass"
+                                                        name="logpass" class="form-style" placeholder="Your Password"
+                                                        id="logpass" autocomplete="off">
+
+
+                                                    <span class="eye" (click)="viewPassword()">
+                                                        <i [ngClass]="visible? 'pi pi-eye-slash':'pi pi-eye'"
+                                                            style="font-size:1rem"></i>
+
+                                                    </span>
+                                                    <span class="text-danger"
+                                                        *ngIf="loginForm.controls['pass'].dirty && loginForm.hasError('required','pass')">Password
+                                                        is required</span>
+
+                                                </div>
+                                                <button type="submit" (click)="loggedIn()" [disabled]="!loginForm.valid"
+                                                    class="btn mt-4">submit</button>
+                                                <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your
+                                                        password?</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                                <div class="card-back">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Info</h4>
+                                        </div>
+                                        <div class="colortext">
+
+                                            <h5>Complete the registration process to join us. Please go to the
+                                                registration page..</h5>
+                                            <br>
+                                            <a routerLink="/form-sigup">New User ? Click to Registration ! </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <form [formGroup]="loginForm" (ngSubmit)="login()">
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" formControlName="pass" class="form-control" id="exampleInputPassword1">
-                    </div>
-                       <button type="submit" class="btn btn-primary">Login</button>
-                  </form>
-                  <a routerLink="/form-sigup">New User ? Click to SignUp !</a>
-
-
             </div>
         </div>
-    </div>
     </div>
 </div>

@@ -1,0 +1,26 @@
+.body{
+    background: linear-gradient(to top, #c9c9ff 50%, #6e6ef6 90%) no-repeat;
+    }
+.card{
+width: 100%;
+padding: 45px;
+border: 2px solid #6e6ef6;
+background:transparent;
+}
+.form-label{
+    color:rgb(2, 2, 100);
+}
+#exampleInputName{
+    width: 50%;
+    border: 1px solid blue;
+}
+#exampleInputList{
+    width: 60%;
+    border: 1px solid blue;
+}
+#exampleInputAbout{
+    border: 1px solid blue;
+}
+#exampleInputMaking{
+    border: 1px solid blue;
+}

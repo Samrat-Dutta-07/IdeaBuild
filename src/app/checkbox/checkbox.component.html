@@ -1,0 +1,60 @@
+<app-profile-header></app-profile-header>
+<div class="body">
+    <div class="Component">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+<form>
+    <div class="mb-3">
+      <label for="exampleInputName" class="form-label">Project Name:</label>
+      <input type="text" #box (keyup)="getValue(box.value)" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+    </div>
+    
+    <div class="mb-3">
+        <label for="exampleInputAbout" class="form-label">Project About:</label>
+        <textarea rows="4" #box1 (keyup)="getValue1(box1.value)" class="form-control" id="exampleInputAbout" aria-describedby="emailHelp"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputList" class="form-label">Component List:</label>
+        <input type="text" class="form-control" id="exampleInputList" aria-describedby="emailHelp">
+        <button type="submit" class="btn btn-primary">Enter</button>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputMaking" class="form-label">Making Project:</label>
+        <textarea rows="8" #box2 (keyup)="getValue2(box2.value)" class="form-control" id="exampleInputMaking" aria-describedby="emailHelp"></textarea>
+      </div>
+
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+
+<div class="col-md-7">
+    <div class="card">
+        <label><b><u>Project Name:</u></b></label>
+ <h3>{{displayVal}}</h3>
+ <label><b><u>Project About:</u></b></label>
+ <h3>{{displayVal1}}</h3>
+ <label><b><u>Component List:</u></b></label>
+ <!-- <h3>{{}}</h3> -->
+ <label><b><u>Making Project:</u></b></label>
+ <h3>{{displayVal2}}</h3>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
